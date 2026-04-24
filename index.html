@@ -5,126 +5,150 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Patrick Maq Consulting</title>
 <meta name="description" content="All-in-one ecommerce consulting for founders ready to build, launch, and grow.">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --sand:#F5F0E8;--orange:#E8834A;--orange-light:#F2A96E;--orange-muted:#F0C4A0;
-  --charcoal:#1C1C1A;--muted:#9A9488;
-  --glass:rgba(255,255,255,0.55);--glass-border:rgba(255,255,255,0.7);
+  --navy:#1F3E9A;--navy-dark:#162D78;--navy-light:#2A4DB0;
+  --gold:#E0A721;--gold-light:#F0BC3A;
+  --white:#FFFFFF;--off-white:#F8F8F8;--black:#000000;
+  --grey:#6B7280;--light-grey:#E5E7EB;
   --heading:'DM Serif Display',Georgia,serif;--body:'DM Sans',sans-serif;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--body);background:var(--sand);color:var(--charcoal);overflow-x:hidden;min-height:100vh}
-.bg-blobs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.5}
-.blob-1{width:600px;height:600px;background:radial-gradient(circle,#F2A96E,#E8834A);top:-100px;right:-100px}
-.blob-2{width:500px;height:500px;background:radial-gradient(circle,#E8DFC8,#D4C9A8);bottom:-50px;left:-100px}
-.blob-3{width:300px;height:300px;background:radial-gradient(circle,#F5E6D0,#EDD5B0);top:40%;left:30%}
-nav{position:fixed;top:1.5rem;left:50%;transform:translateX(-50%);z-index:100;width:calc(100% - 4rem);max-width:1100px;display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:var(--glass);border:1px solid var(--glass-border);border-radius:100px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 4px 30px rgba(0,0,0,0.06)}
-.nav-logo{font-family:var(--body);font-weight:500;font-size:14px;color:var(--charcoal);text-decoration:none}
-.nav-links{display:flex;gap:1.5rem;list-style:none}
-.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s}
-.nav-links a:hover{color:var(--charcoal)}
-.nav-cta{padding:0.55rem 1.3rem;background:var(--charcoal);color:#fff;font-family:var(--body);font-size:12px;font-weight:500;border-radius:100px;text-decoration:none;transition:background 0.2s}
-.nav-cta:hover{background:var(--orange)}
-.hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 2rem 4rem}
-.hero-eyebrow{display:inline-block;padding:0.4rem 1rem;background:var(--glass);border:1px solid var(--glass-border);border-radius:100px;backdrop-filter:blur(12px);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:2rem;animation:fadeUp 0.8s ease both}
-.hero-hl{font-family:var(--heading);font-size:clamp(3rem,7vw,6.5rem);font-weight:400;line-height:1.02;color:var(--charcoal);max-width:800px;margin:0 auto 1.5rem;animation:fadeUp 0.8s ease 0.1s both}
-.hero-hl em{font-style:italic;color:var(--orange)}
-.hero-sub{font-size:16px;color:var(--muted);line-height:1.8;max-width:500px;margin:0 auto 3rem;font-weight:300;animation:fadeUp 0.8s ease 0.2s both}
-.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.8s ease 0.3s both}
-.btn-solid{padding:0.9rem 2rem;background:var(--charcoal);color:#fff;border-radius:100px;font-family:var(--body);font-size:13px;font-weight:500;text-decoration:none;transition:background 0.2s}
-.btn-solid:hover{background:var(--orange)}
-.btn-glass{padding:0.9rem 2rem;background:var(--glass);border:1px solid var(--glass-border);border-radius:100px;font-family:var(--body);font-size:13px;color:var(--charcoal);text-decoration:none;backdrop-filter:blur(12px);transition:background 0.2s}
-.btn-glass:hover{background:rgba(255,255,255,0.8)}
-.hero-img-wrap{position:relative;z-index:1;width:100%;max-width:1000px;margin:3rem auto 0;display:grid;grid-template-columns:1fr 2fr;gap:2rem;align-items:end;animation:fadeUp 0.8s ease 0.4s both}.hero-photo{border-radius:24px;overflow:hidden;height:380px;background:rgba(255,255,255,0.3);border:1px solid var(--glass-border);backdrop-filter:blur(10px)}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}.hero-cards{display:flex;flex-direction:column;gap:1rem}
-.hero-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;backdrop-filter:blur(20px);padding:1.5rem;text-align:left;min-width:150px}
-.hero-card-accent{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle,var(--orange-light),var(--orange));margin-bottom:1rem}
-.hero-card-num{font-family:var(--heading);font-size:2.5rem;color:var(--charcoal);line-height:1;margin-bottom:0.3rem}
-.hero-card-label{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);line-height:1.4}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.ticker{position:relative;z-index:1;padding:1rem 0;overflow:hidden;white-space:nowrap;background:rgba(255,255,255,0.3);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border)}
+body{font-family:var(--body);background:var(--white);color:var(--black);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);border-bottom:2px solid var(--navy);display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3rem}
+.nav-logo{font-size:14px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--navy);text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{padding:0.6rem 1.5rem;background:var(--navy);color:var(--white);font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:background 0.2s}
+.nav-cta:hover{background:var(--gold)}
+
+/* HERO */
+.hero{margin-top:62px;display:grid;grid-template-columns:1fr 1fr;min-height:90vh}
+.hero-left{background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:5rem 4rem;position:relative;overflow:hidden}
+.hero-left::before{content:'';position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;border-radius:50%;background:var(--navy-light);opacity:0.4}
+.hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;position:relative;z-index:1}
+.hero-hl{font-family:var(--heading);font-size:clamp(2.5rem,4.5vw,4.2rem);font-weight:700;line-height:1.05;color:var(--white);margin-bottom:1.5rem;letter-spacing:-0.01em;position:relative;z-index:1}
+.hero-hl em{font-style:normal;color:var(--gold)}
+.hero-sub{font-size:15px;font-weight:300;color:rgba(255,255,255,0.72);line-height:1.8;max-width:400px;margin-bottom:2.5rem;position:relative;z-index:1}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;position:relative;z-index:1}
+.btn-gold{padding:0.9rem 2rem;background:var(--gold);color:var(--black);font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:background 0.2s}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-outline{padding:0.9rem 2rem;border:1px solid rgba(255,255,255,0.4);color:var(--white);font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:border-color 0.2s,color 0.2s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;gap:0;margin-top:3rem;border-top:1px solid rgba(255,255,255,0.15);position:relative;z-index:1}
+.hero-stat{padding:1.5rem 2rem 0 0;margin-right:2rem;border-right:1px solid rgba(255,255,255,0.15)}
+.hero-stat:last-child{border-right:none}
+.hero-stat-num{font-size:2.2rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:0.25rem}
+.hero-stat-label{font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+
+.hero-right{position:relative;overflow:hidden;background:var(--off-white)}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.hero-tag{position:absolute;bottom:0;left:0;right:0;background:var(--gold);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.hero-tag-text{font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--black)}
+.hero-tag-line{width:40px;height:2px;background:var(--black)}
+
+/* TICKER */
+.ticker{background:var(--black);padding:0.9rem 0;overflow:hidden;white-space:nowrap}
 .ticker-track{display:inline-flex;gap:2rem;animation:tick 25s linear infinite}
-.ticker-item{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);flex-shrink:0}
-.ticker-sep{color:var(--orange-muted);margin-left:2rem}
+.ticker-item{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);flex-shrink:0}
+.ticker-sep{color:var(--gold);margin-left:2rem}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.logo-strip{position:relative;z-index:1;padding:4rem 0;background:#ffffff}
-.logo-strip-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:2rem}
+
+/* LOGO STRIP */
+.logo-strip{background:var(--white);padding:4rem 3rem;border-bottom:1px solid var(--light-grey)}
+.logo-strip-label{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--navy);text-align:center;margin-bottom:2.5rem}
 .logo-track-wrap{overflow:hidden;position:relative}
 .logo-track-wrap::before,.logo-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none}
-.logo-track-wrap::before{left:0;background:linear-gradient(to right,#ffffff,transparent)}
-.logo-track-wrap::after{right:0;background:linear-gradient(to left,#ffffff,transparent)}
+.logo-track-wrap::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
+.logo-track-wrap::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
 .logo-track{display:inline-flex;align-items:center;gap:4rem;animation:logoScroll 40s linear infinite;padding:0 2rem}
 .logo-track:hover{animation-play-state:paused}
-.logo-item{flex-shrink:0;height:40px;display:flex;align-items:center;opacity:0.5;filter:grayscale(100%);transition:all 0.3s}
+.logo-item{flex-shrink:0;height:40px;display:flex;align-items:center;opacity:0.45;filter:grayscale(100%);transition:all 0.3s}
 .logo-item:hover{opacity:1;filter:grayscale(0%)}
 .logo-item img{height:100%;max-width:110px;width:auto;object-fit:contain}
 @keyframes logoScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.services{position:relative;z-index:1;padding:6rem 2rem}
-.services-inner{max-width:1000px;margin:0 auto}
-.sec-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:0.75rem}
-.sec-title{font-family:var(--heading);font-size:clamp(2rem,4vw,3.2rem);color:var(--charcoal);line-height:1.1;margin-bottom:1rem}
-.sec-title em{font-style:italic;color:var(--orange)}
-.sec-intro{font-size:15px;color:var(--muted);line-height:1.8;font-weight:300;max-width:580px;margin-bottom:3rem}
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.svc{background:var(--glass);border:1px solid var(--glass-border);border-radius:24px;backdrop-filter:blur(20px);padding:2.5rem;transition:transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden}
-.svc:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.08)}
-.svc-num{font-family:var(--heading);font-size:2rem;color:var(--orange-muted);line-height:1;margin-bottom:1.25rem}
-.svc-title{font-family:var(--heading);font-size:1.3rem;color:var(--charcoal);margin-bottom:0.75rem}
-.svc-desc{font-size:13px;color:var(--muted);line-height:1.8;font-weight:300}
-.svc-accent{position:absolute;bottom:-30px;right:-30px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,var(--orange-muted),transparent);opacity:0.4}
-.about{position:relative;z-index:1;padding:6rem 2rem;background:rgba(255,255,255,0.2)}
-.about-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.about-img-wrap{position:relative;border-radius:28px;overflow:hidden;height:520px}
-.about-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.about-img-tag{position:absolute;bottom:1.5rem;left:1.5rem;background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(12px);border-radius:100px;padding:0.5rem 1.2rem;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--charcoal)}
-.about-content{display:flex;flex-direction:column;gap:1.5rem}
-.about-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange)}
-.about-title{font-family:var(--heading);font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.2;color:var(--charcoal)}
-.about-title em{font-style:italic;color:var(--orange)}
-.about-body{font-size:14px;color:var(--muted);line-height:1.95;font-weight:300}
-.about-body strong{color:var(--charcoal);font-weight:500}
-.about-quote{background:var(--charcoal);border-radius:20px;padding:1.5rem 2rem;display:flex;align-items:center;gap:1rem}
-.about-quote-dot{width:32px;height:32px;flex-shrink:0;border-radius:50%;background:radial-gradient(circle,var(--orange-light),var(--orange))}
-.about-quote-text{font-family:var(--heading);font-size:1rem;font-style:italic;color:rgba(255,255,255,0.85);line-height:1.5}
-.process{position:relative;z-index:1;padding:6rem 2rem}
-.process-inner{max-width:1000px;margin:0 auto}
-.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
-.process-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;backdrop-filter:blur(20px);padding:2rem 1.5rem}
-.process-num{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;display:block}
-.process-title{font-family:var(--heading);font-size:1.2rem;color:var(--charcoal);margin-bottom:0.6rem}
-.process-desc{font-size:12px;color:var(--muted);line-height:1.8;font-weight:300}
-.cta{position:relative;z-index:1;padding:6rem 2rem;text-align:center}
-.cta-card{max-width:700px;margin:0 auto;background:var(--charcoal);border-radius:32px;padding:5rem 3rem;position:relative;overflow:hidden}
-.cta-blob{position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,var(--orange),transparent);opacity:0.3}
-.cta-blob-2{position:absolute;bottom:-80px;left:-80px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,var(--orange-light),transparent);opacity:0.2}
-.cta-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1rem}
-.cta-title{font-family:var(--heading);font-size:clamp(2rem,4vw,3.5rem);color:#fff;line-height:1.1;margin-bottom:0.75rem}
-.cta-title em{font-style:italic;color:var(--orange-light)}
-.cta-sub{font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:2.5rem;font-weight:300}
-.btn-orange{display:inline-block;padding:1rem 2.5rem;background:radial-gradient(circle at 30% 30%,var(--orange-light),var(--orange));color:#fff;border-radius:100px;font-family:var(--body);font-size:13px;font-weight:500;text-decoration:none;box-shadow:0 8px 30px rgba(232,131,74,0.4);transition:transform 0.2s,box-shadow 0.2s}
-.btn-orange:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(232,131,74,0.5)}
-footer{position:relative;z-index:1;padding:2rem 3rem;background:rgba(255,255,255,0.3);border-top:1px solid var(--glass-border);display:flex;justify-content:space-between;align-items:center}
-.f-logo{font-family:var(--body);font-size:13px;font-weight:500;color:var(--charcoal)}
-.f-copy{font-size:11px;color:var(--muted)}
+
+/* SERVICES */
+.services{padding:6rem 3rem;background:var(--off-white)}
+.services-inner{max-width:1100px;margin:0 auto}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.sec-title{font-family:var(--heading);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:1rem;letter-spacing:-0.01em}
+.sec-intro{font-size:15px;font-weight:300;color:var(--grey);line-height:1.8;max-width:560px;margin-bottom:3.5rem}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--navy)}
+.svc{padding:3rem;border-right:2px solid var(--navy);border-bottom:2px solid var(--navy);transition:background 0.2s}
+.svc:hover{background:var(--navy)}
+.svc:hover .svc-num,.svc:hover .svc-title,.svc:hover .svc-desc{color:var(--white)}
+.svc:hover .svc-num{color:var(--gold)}
+.svc:nth-child(2n){border-right:none}
+.svc:nth-child(3),.svc:nth-child(4){border-bottom:none}
+.svc-num{font-size:2rem;font-weight:700;color:rgba(31,62,154,0.2);line-height:1;margin-bottom:1.25rem;transition:color 0.2s}
+.svc-title{font-family:var(--heading);font-size:1.2rem;font-weight:400;color:var(--navy);margin-bottom:0.75rem;letter-spacing:0.02em;transition:color 0.2s}
+.svc-desc{font-size:13px;font-weight:300;color:var(--grey);line-height:1.8;transition:color 0.2s}
+
+/* ABOUT */
+.about{padding:0;display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+.about-img{position:relative;overflow:hidden;background:var(--light-grey)}
+.about-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.about-img-overlay{position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--gold)}
+.about-content{background:var(--navy);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.about-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+.about-title{font-family:var(--heading);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:1.5rem;letter-spacing:-0.01em}
+.about-title em{font-style:normal;color:var(--gold)}
+.about-body{font-size:14px;font-weight:300;color:rgba(255,255,255,0.72);line-height:1.9;margin-bottom:2rem}
+.about-body strong{color:var(--white);font-weight:600}
+.about-divider{width:40px;height:3px;background:var(--gold);margin-bottom:1.5rem}
+.about-quote{font-family:var(--heading);font-size:1.1rem;font-style:italic;font-weight:400;color:rgba(255,255,255,0.55);line-height:1.6;border-left:3px solid var(--gold);padding-left:1.25rem}
+
+/* PROCESS */
+.process{padding:6rem 3rem;background:var(--white)}
+.process-inner{max-width:1100px;margin:0 auto}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3.5rem;border:2px solid var(--light-grey)}
+.process-card{padding:2.5rem 2rem;border-right:2px solid var(--light-grey);position:relative}
+.process-card:last-child{border-right:none}
+.process-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:transparent;transition:background 0.2s}
+.process-card:hover::before{background:var(--gold)}
+.process-num{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.process-title{font-family:var(--heading);font-size:1.1rem;font-weight:400;color:var(--navy);margin-bottom:0.6rem;letter-spacing:0.01em}
+.process-desc{font-size:12px;font-weight:300;color:var(--grey);line-height:1.8}
+
+/* CTA */
+.cta{background:var(--gold);padding:6rem 3rem}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center}
+.cta-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(0,0,0,0.5);margin-bottom:0.75rem}
+.cta-title{font-family:var(--heading);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:var(--black);line-height:1.1;letter-spacing:-0.01em}
+.cta-title em{font-style:normal;color:var(--navy)}
+.cta-sub{font-size:14px;font-weight:300;color:rgba(0,0,0,0.6);margin-top:0.75rem;line-height:1.7}
+.btn-navy{display:inline-block;padding:1.1rem 2.5rem;background:var(--navy);color:var(--white);font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:background 0.2s}
+.btn-navy:hover{background:var(--navy-dark)}
+
+/* FOOTER */
+footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.f-logo{font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+.f-copy{font-size:11px;font-weight:400;color:rgba(255,255,255,0.3)}
+
 @media(max-width:768px){
-  nav{width:calc(100% - 2rem);padding:0.75rem 1.25rem}
+  nav{padding:1rem 1.5rem}
   .nav-links{display:none}
-  .hero{padding:6rem 1.5rem 3rem}
-  .svc-grid,.about-inner{grid-template-columns:1fr}
-  .about-img-wrap{height:350px}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-right{height:60vw}
+  .hero-left{padding:3rem 1.5rem}
+  .about{grid-template-columns:1fr}
+  .about-img{height:350px}
+  .svc-grid{grid-template-columns:1fr}
+  .svc{border-right:none!important;border-bottom:2px solid var(--navy)!important}
+  .svc:last-child{border-bottom:none!important}
   .process-grid{grid-template-columns:1fr 1fr}
+  .cta-inner{grid-template-columns:1fr}
   footer{flex-direction:column;gap:1rem;text-align:center}
 }
 </style>
 </head>
 <body>
-<div class="bg-blobs">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
-</div>
 
 <nav>
   <a href="#" class="nav-logo">Patrick Maq</a>
@@ -137,31 +161,34 @@ footer{position:relative;z-index:1;padding:2rem 3rem;background:rgba(255,255,255
 </nav>
 
 <section class="hero">
-  <span class="hero-eyebrow">Ecommerce Consulting</span>
-  <h1 class="hero-hl">Your Partner in Launching &amp; Scaling a <em>Successful Online Store.</em></h1>
-  <p class="hero-sub">An all-in-one ecommerce solution for founders who are ready to stop figuring it out alone — and start building something that actually moves.</p>
-  <div class="hero-actions">
-    <a href="#contact" class="btn-solid">Start a conversation</a>
-    <a href="#services" class="btn-glass">See what I do</a>
+  <div class="hero-left">
+    <p class="hero-eyebrow">Ecommerce Consulting</p>
+    <h1 class="hero-hl">Your Partner in Launching & Scaling a <em>Successful Online Store.</em></h1>
+    <p class="hero-sub">An all-in-one ecommerce solution for founders who are ready to stop figuring it out alone — and start building something that actually moves.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-gold">Start a conversation</a>
+      <a href="#services" class="btn-outline">See what I do</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">20+</div>
+        <div class="hero-stat-label">Clients launched</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">8+</div>
+        <div class="hero-stat-label">Years experience</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1</div>
+        <div class="hero-stat-label">All-in-one solution</div>
+      </div>
+    </div>
   </div>
-    <div class="hero-img-wrap">
-    <div class="hero-photo"><img src="patrick-hero.png" alt="Patrick Maq"/></div>
-    <div class="hero-cards">
-    <div class="hero-card">
-      <div class="hero-card-accent"></div>
-      <div class="hero-card-num">20+</div>
-      <div class="hero-card-label">Clients launched</div>
-    </div>
-    <div class="hero-card">
-      <div class="hero-card-accent"></div>
-      <div class="hero-card-num">8+</div>
-      <div class="hero-card-label">Years experience</div>
-    </div>
-    <div class="hero-card">
-      <div class="hero-card-accent"></div>
-      <div class="hero-card-num">1</div>
-      <div class="hero-card-label">All-in-one startup solution</div>
-    </div>
+  <div class="hero-right">
+    <img class="hero-img" src="patrick-hero.png" alt="Patrick Maq" />
+    <div class="hero-tag">
+      <span class="hero-tag-text">Ecommerce Specialist · Vancouver, BC</span>
+      <span class="hero-tag-line"></span>
     </div>
   </div>
 </section>
@@ -184,7 +211,7 @@ footer{position:relative;z-index:1;padding:2rem 3rem;background:rgba(255,255,255
 </div>
 
 <div class="logo-strip">
-  <p class="logo-strip-label">Trusted By:</p>
+  <p class="logo-strip-label">Trusted by</p>
   <div class="logo-track-wrap">
     <div class="logo-track">
       <div class="logo-item"><img src="parr_business_law_02.png" alt="Parr"/></div>
@@ -221,45 +248,40 @@ footer{position:relative;z-index:1;padding:2rem 3rem;background:rgba(255,255,255
 
 <section class="services" id="services">
   <div class="services-inner">
-    <p class="sec-label">What I do</p>
-    <h2 class="sec-title">Everything you need to <em>launch and grow.</em></h2>
-    <p class="sec-intro">Most founders have a great product and no idea where to start online. I take care of the whole picture — from building your store to driving traffic and turning that traffic into real revenue.</p>
+    <p class="sec-eyebrow">What I do</p>
+    <h2 class="sec-title">Everything you need to launch and grow.</h2>
+    <p class="sec-intro">Most founders have a great product and no idea where to start online. I take care of the whole picture — from building your store to driving traffic and turning it into real revenue.</p>
     <div class="svc-grid">
-      <div class="svc"><div class="svc-accent"></div><div class="svc-num">01</div><h3 class="svc-title">Website & Shopify Build</h3><p class="svc-desc">A store that actually converts. I design and build clean, fast, mobile-ready Shopify and web experiences that make your product look as good as it is — and make it easy for people to buy.</p></div>
-      <div class="svc"><div class="svc-accent"></div><div class="svc-num">02</div><h3 class="svc-title">Email Marketing</h3><p class="svc-desc">Your email list is your most valuable asset. I build the flows, sequences, and campaigns that keep your customers coming back — welcome series, abandoned cart, post-purchase, and beyond.</p></div>
-      <div class="svc"><div class="svc-accent"></div><div class="svc-num">03</div><h3 class="svc-title">Advertising & Marketing</h3><p class="svc-desc">Paid ads that are worth paying for. I manage Meta and Google campaigns with a clear strategy behind every dollar — so you're not just spending, you're growing.</p></div>
-      <div class="svc"><div class="svc-accent"></div><div class="svc-num">04</div><h3 class="svc-title">Analytics & Growth</h3><p class="svc-desc">What gets measured gets better. I set up the reporting and dashboards that show you what's working, what's not, and exactly where to focus next.</p></div>
+      <div class="svc"><div class="svc-num">01</div><h3 class="svc-title">Website & Shopify Build</h3><p class="svc-desc">A store that actually converts. I design and build clean, fast, mobile-ready Shopify and web experiences that make your product look as good as it is — and make it easy for people to buy.</p></div>
+      <div class="svc"><div class="svc-num">02</div><h3 class="svc-title">Email Marketing</h3><p class="svc-desc">Your email list is your most valuable asset. I build the flows, sequences, and campaigns that keep your customers coming back — welcome series, abandoned cart, post-purchase, and beyond.</p></div>
+      <div class="svc"><div class="svc-num">03</div><h3 class="svc-title">Advertising & Marketing</h3><p class="svc-desc">Paid ads that are worth paying for. I manage Meta and Google campaigns with a clear strategy behind every dollar — so you're not just spending, you're growing.</p></div>
+      <div class="svc"><div class="svc-num">04</div><h3 class="svc-title">Analytics & Growth</h3><p class="svc-desc">What gets measured gets better. I set up the reporting and dashboards that show you what's working, what's not, and exactly where to focus next.</p></div>
     </div>
   </div>
 </section>
 
 <section class="about" id="about">
-  <div class="about-inner">
-    <div class="about-img-wrap">
-      <img src="patrick-about.png" alt="Patrick Maq" />
-      <span class="about-img-tag">Hi, I'm Patrick</span>
-    </div>
-    <div class="about-content">
-      <p class="about-label">About</p>
-      <h2 class="about-title">The creative side <em>and</em> the technical side.</h2>
-      <p class="about-body">
-        Most people don't start a brand because they love marketing. They start it because they believe in something — a product, an idea, a vision worth building.<br><br>
-        That's the part I care about. I work with founders who are serious about what they're creating, and I help them build the digital infrastructure to match that ambition.<br><br>
-        <strong>I understand both sides of the equation.</strong> The creative work that makes a brand feel right, and the technical systems that make it actually run. I help you make sense of the moving parts — your store, your emails, your ads, your data — so everything works together instead of pulling in different directions.<br><br>
-        I care about brands that want to create with intention. If that's you, I think we'll work well together.
-      </p>
-      <div class="about-quote">
-        <div class="about-quote-dot"></div>
-        <p class="about-quote-text">"Strategy is the difference between a brand people find — and one they seek out."</p>
-      </div>
-    </div>
+  <div class="about-img">
+    <img src="patrick-about.png" alt="Patrick Maq" />
+    <div class="about-img-overlay"></div>
+  </div>
+  <div class="about-content">
+    <p class="about-eyebrow">About</p>
+    <div class="about-divider"></div>
+    <h2 class="about-title">The creative side <em>and</em> the technical side.</h2>
+    <p class="about-body">
+      Most people don't start a brand because they love marketing. They start it because they believe in something — a product, an idea, a vision worth building.<br><br>
+      <strong>I understand both sides of the equation.</strong> The creative work that makes a brand feel right, and the technical systems that make it actually run. I help you make sense of the moving parts — your store, your emails, your ads, your data — so everything works together.<br><br>
+      I care about brands that want to create with intention. If that's you, I think we'll work well together.
+    </p>
+    <p class="about-quote">"Strategy is the difference between a brand people find — and one they seek out."</p>
   </div>
 </section>
 
 <section class="process" id="process">
   <div class="process-inner">
-    <p class="sec-label">How it works</p>
-    <h2 class="sec-title">Simple process. <em>Real results.</em></h2>
+    <p class="sec-eyebrow">How it works</p>
+    <h2 class="sec-title">Simple process. Real results.</h2>
     <div class="process-grid">
       <div class="process-card"><span class="process-num">01 — Start</span><h3 class="process-title">We talk</h3><p class="process-desc">No forms, no funnels. Just a real conversation about where you are, where you want to go, and whether we're a good fit.</p></div>
       <div class="process-card"><span class="process-num">02 — Plan</span><h3 class="process-title">We map it out</h3><p class="process-desc">A clear plan for your store, your marketing, and your growth — prioritised and scoped so nothing gets missed.</p></div>
@@ -270,13 +292,13 @@ footer{position:relative;z-index:1;padding:2rem 3rem;background:rgba(255,255,255
 </section>
 
 <section class="cta" id="contact">
-  <div class="cta-card">
-    <div class="cta-blob"></div>
-    <div class="cta-blob-2"></div>
-    <p class="cta-label">Get in touch</p>
-    <h2 class="cta-title">Ready to stop waiting and <em>start building?</em></h2>
-    <p class="cta-sub">No pressure. Just a conversation about where you're headed and how I can help get you there.</p>
-    <a href="mailto:patrickmaqconsulting@gmail.com" class="btn-orange">patrickmaqconsulting@gmail.com</a>
+  <div class="cta-inner">
+    <div>
+      <p class="cta-eyebrow">Get in touch</p>
+      <h2 class="cta-title">Ready to stop waiting and <em>start building?</em></h2>
+      <p class="cta-sub">No pressure. Just a conversation about where you're headed and how I can help get you there.</p>
+    </div>
+    <a href="mailto:patrickmaqconsulting@gmail.com" class="btn-navy">patrickmaqconsulting@gmail.com</a>
   </div>
 </section>
 
@@ -284,5 +306,6 @@ footer{position:relative;z-index:1;padding:2rem 3rem;background:rgba(255,255,255
   <span class="f-logo">Patrick Maq Consulting</span>
   <span class="f-copy">© 2026. All rights reserved.</span>
 </footer>
+
 </body>
 </html>
