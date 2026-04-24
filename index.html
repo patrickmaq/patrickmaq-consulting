@@ -38,7 +38,7 @@ nav{position:fixed;top:1.5rem;left:50%;transform:translateX(-50%);z-index:100;wi
 .btn-solid:hover{background:var(--orange)}
 .btn-glass{padding:0.9rem 2rem;background:var(--glass);border:1px solid var(--glass-border);border-radius:100px;font-family:var(--body);font-size:13px;color:var(--charcoal);text-decoration:none;backdrop-filter:blur(12px);transition:background 0.2s}
 .btn-glass:hover{background:rgba(255,255,255,0.8)}
-.hero-cards{display:flex;gap:1rem;justify-content:center;margin-top:4rem;flex-wrap:wrap;animation:fadeUp 0.8s ease 0.4s both}
+.hero-img-wrap{position:relative;z-index:1;width:100%;max-width:1000px;margin:3rem auto 0;display:grid;grid-template-columns:1fr 2fr;gap:2rem;align-items:end;animation:fadeUp 0.8s ease 0.4s both}.hero-photo{border-radius:24px;overflow:hidden;height:380px;background:rgba(255,255,255,0.3);border:1px solid var(--glass-border);backdrop-filter:blur(10px)}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}.hero-cards{display:flex;flex-direction:column;gap:1rem}
 .hero-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;backdrop-filter:blur(20px);padding:1.5rem;text-align:left;min-width:150px}
 .hero-card-accent{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle,var(--orange-light),var(--orange));margin-bottom:1rem}
 .hero-card-num{font-family:var(--heading);font-size:2.5rem;color:var(--charcoal);line-height:1;margin-bottom:0.3rem}
@@ -138,13 +138,15 @@ footer{position:relative;z-index:1;padding:2rem 3rem;background:rgba(255,255,255
 
 <section class="hero">
   <span class="hero-eyebrow">Ecommerce Consulting</span>
-  <h1 class="hero-hl">Your Partner in <em>Launching & Scaling</em> a Successful Online Store</h1>
+  <h1 class="hero-hl">Your Partner in Launching &amp; Scaling a <em>Successful Online Store.</em></h1>
   <p class="hero-sub">An all-in-one ecommerce solution for founders who are ready to stop figuring it out alone — and start building something that actually moves.</p>
   <div class="hero-actions">
     <a href="#contact" class="btn-solid">Start a conversation</a>
     <a href="#services" class="btn-glass">See what I do</a>
   </div>
-  <div class="hero-cards">
+    <div class="hero-img-wrap">
+    <div class="hero-photo"><img src="patrick-hero.png" alt="Patrick Maq"/></div>
+    <div class="hero-cards">
     <div class="hero-card">
       <div class="hero-card-accent"></div>
       <div class="hero-card-num">20+</div>
@@ -159,6 +161,7 @@ footer{position:relative;z-index:1;padding:2rem 3rem;background:rgba(255,255,255
       <div class="hero-card-accent"></div>
       <div class="hero-card-num">1</div>
       <div class="hero-card-label">All-in-one startup solution</div>
+    </div>
     </div>
   </div>
 </section>
@@ -181,7 +184,7 @@ footer{position:relative;z-index:1;padding:2rem 3rem;background:rgba(255,255,255
 </div>
 
 <div class="logo-strip">
-  <p class="logo-strip-label">Trusted By:</p>
+  <p class="logo-strip-label">Brands I've helped build & grow</p>
   <div class="logo-track-wrap">
     <div class="logo-track">
       <div class="logo-item"><img src="parr_business_law_02.png" alt="Parr"/></div>
