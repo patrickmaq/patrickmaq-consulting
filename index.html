@@ -10,8 +10,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --navy:#1F3E9A;--navy-dark:#162D78;--navy-light:#2A4DB0;
-  --gold:#f0bf61;--gold-light:#F0BC3A;
-  --white:#FFFFFF;--off-white:#F8F8F8;--black:#4c4848;
+  --gold:#E0A721;--gold-light:#F0BC3A;
+  --white:#FFFFFF;--off-white:#F8F8F8;--black:#000000;
   --grey:#6B7280;--light-grey:#E5E7EB;
   --heading:'DM Serif Display',Georgia,serif;--body:'DM Sans',sans-serif;
 }
@@ -68,7 +68,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);bord
 .logo-track-wrap::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
 .logo-track{display:inline-flex;align-items:center;gap:4rem;animation:logoScroll 40s linear infinite;padding:0 2rem}
 .logo-track:hover{animation-play-state:paused}
-.logo-item{flex-shrink:0;height:80px;display:flex;align-items:center;opacity:0.45;filter:grayscale(100%);transition:all 0.3s}
+.logo-item{flex-shrink:0;height:40px;display:flex;align-items:center;opacity:0.45;filter:grayscale(100%);transition:all 0.3s}
 .logo-item:hover{opacity:1;filter:grayscale(0%)}
 .logo-item img{height:100%;max-width:110px;width:auto;object-fit:contain}
 @keyframes logoScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -146,6 +146,195 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
   .cta-inner{grid-template-columns:1fr}
   footer{flex-direction:column;gap:1rem;text-align:center}
 }
+
+/* SCROLL REVEAL ANIMATIONS */
+/* ENHANCED ANIMATIONS & EFFECTS */
+
+/* Hero geometric background */
+.hero-left::after {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  border: 1px solid rgba(224,167,33,0.15);
+  border-radius: 50%;
+  animation: slowRotate 20s linear infinite;
+  pointer-events: none;
+}
+.hero-left .geo-ring-2 {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 250px;
+  height: 250px;
+  border: 1px solid rgba(224,167,33,0.1);
+  border-radius: 50%;
+  animation: slowRotate 15s linear infinite reverse;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-left .geo-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+.geo-dot-1 { top: 20%; left: 10%; animation: float 6s ease-in-out infinite; }
+.geo-dot-2 { top: 60%; left: 5%; animation: float 8s ease-in-out infinite 1s; }
+.geo-dot-3 { top: 80%; right: 15%; animation: float 7s ease-in-out infinite 2s; }
+.geo-dot-4 { top: 30%; right: 10%; animation: float 5s ease-in-out infinite 0.5s; }
+
+@keyframes slowRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* PARALLAX BREAK SECTION */
+.parallax-break {
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 3rem;
+  background: var(--navy-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.parallax-break-bg {
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(ellipse at 30% 50%, rgba(224,167,33,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 50%, rgba(31,62,154,0.8) 0%, transparent 60%);
+  transition: transform 0.1s linear;
+}
+.parallax-break-lines {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.06;
+}
+.parallax-break-lines::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  right: -10%;
+  height: 1px;
+  background: var(--gold);
+  transform: rotate(-5deg);
+  box-shadow: 0 60px 0 rgba(224,167,33,0.5), 0 120px 0 rgba(224,167,33,0.3), 0 -60px 0 rgba(224,167,33,0.5), 0 -120px 0 rgba(224,167,33,0.3);
+}
+.parallax-break-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+.parallax-break-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.parallax-break-quote {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.15;
+  font-style: italic;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease 0.15s, transform 0.9s ease 0.15s;
+}
+.parallax-break-quote em {
+  font-style: normal;
+  color: var(--gold);
+}
+.parallax-break-line {
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto;
+  transition: width 1s ease 0.4s;
+}
+.parallax-break.visible .parallax-break-label,
+.parallax-break.visible .parallax-break-quote {
+  opacity: 1;
+  transform: translateY(0);
+}
+.parallax-break.visible .parallax-break-line {
+  width: 60px;
+}
+
+/* COUNTER ANIMATION */
+.hero-stat-num {
+  transition: none;
+}
+
+/* SERVICE CARD GOLD BORDER REVEAL */
+.svc {
+  border-left: 3px solid transparent !important;
+  transition: background 0.3s, border-left-color 0.5s ease !important;
+}
+.svc.visible {
+  border-left-color: var(--gold) !important;
+}
+.svc:hover {
+  border-left-color: var(--gold) !important;
+}
+
+/* ENHANCED REVEAL */
+.reveal, .reveal-left, .reveal-right {
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
 </style>
 </head>
 <body>
@@ -162,32 +351,32 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
 
 <section class="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow">Ecommerce Consulting</p>
-    <h1 class="hero-hl">Your Partner in Launching & Scaling a <em>Successful Online Store.</em></h1>
-    <p class="hero-sub">An all-in-one ecommerce solution for founders who are ready to stop figuring it out alone — and start building something that actually moves.</p>
-    <div class="hero-actions">
+    <div class="geo-ring-2"></div><div class="geo-dot geo-dot-1"></div><div class="geo-dot geo-dot-2"></div><div class="geo-dot geo-dot-3"></div><div class="geo-dot geo-dot-4"></div><p class="hero-eyebrow reveal">Ecommerce Consulting</p>
+    <h1 class="hero-hl reveal reveal-delay-1">Your Partner in Launching & Scaling a <em>Successful Online Store.</em></h1>
+    <p class="hero-sub reveal reveal-delay-2">An all-in-one ecommerce solution for founders who are ready to stop figuring it out alone — and start building something that actually moves.</p>
+    <div class="hero-actions reveal reveal-delay-3">
       <a href="#contact" class="btn-gold">Start a conversation</a>
       <a href="#services" class="btn-outline">See what I do</a>
     </div>
-    <div class="hero-stats">
+    <div class="hero-stats reveal reveal-delay-4">
       <div class="hero-stat">
         <div class="hero-stat-num">20+</div>
         <div class="hero-stat-label">Clients launched</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">12+</div>
+        <div class="hero-stat-num">8+</div>
         <div class="hero-stat-label">Years experience</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">Just me</div>
-        <div class="hero-stat-label">No handoffs. No account managers.</div>
+        <div class="hero-stat-num">1</div>
+        <div class="hero-stat-label">All-in-one solution</div>
       </div>
     </div>
   </div>
   <div class="hero-right">
     <img class="hero-img" src="patrick-hero.png" alt="Patrick Maq" />
     <div class="hero-tag">
-      <span class="hero-tag-text">Ecommerce Specialist</span>
+      <span class="hero-tag-text">Ecommerce Specialist · Vancouver, BC</span>
       <span class="hero-tag-line"></span>
     </div>
   </div>
@@ -222,6 +411,7 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
       <div class="logo-item"><img src="Untitled_design_14.png" alt="Space Water"/></div>
       <div class="logo-item"><img src="nested_naturals_6440fbca-7d9b-49eb-a523-0251b7c43d6a.png" alt="Nested Naturals"/></div>
       <div class="logo-item"><img src="bluechip.png" alt="BlueChip"/></div>
+      <div class="logo-item"><img src="ChatGPT_Image_Aug_11_2025_05_04_29_P_.png" alt="Polar Bear"/></div>
       <div class="logo-item"><img src="WH_web_logo (4).png" alt="Wildfire Honey"/></div>
       <div class="logo-item"><img src="brainchild_02.png" alt="Brainchild"/></div>
       <div class="logo-item"><img src="pink_geranium.jpg" alt="Pink Geranium"/></div>
@@ -235,6 +425,7 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
       <div class="logo-item"><img src="Untitled_design_14.png" alt="Space Water"/></div>
       <div class="logo-item"><img src="nested_naturals_6440fbca-7d9b-49eb-a523-0251b7c43d6a.png" alt="Nested Naturals"/></div>
       <div class="logo-item"><img src="bluechip.png" alt="BlueChip"/></div>
+      <div class="logo-item"><img src="ChatGPT_Image_Aug_11_2025_05_04_29_P_.png" alt="Polar Bear"/></div>
       <div class="logo-item"><img src="WH_web_logo (4).png" alt="Wildfire Honey"/></div>
       <div class="logo-item"><img src="brainchild_02.png" alt="Brainchild"/></div>
       <div class="logo-item"><img src="pink_geranium.jpg" alt="Pink Geranium"/></div>
@@ -246,24 +437,35 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
 
 <section class="services" id="services">
   <div class="services-inner">
-    <p class="sec-eyebrow">What I do</p>
-    <h2 class="sec-title">Everything you need to launch and grow.</h2>
-    <p class="sec-intro">Most founders have a great product and no idea where to start online. I take care of the whole picture — from building your store to driving traffic and turning it into real revenue.</p>
+    <p class="sec-eyebrow reveal">What I do</p>
+    <h2 class="sec-title reveal reveal-delay-1">Everything you need to launch and grow.</h2>
+    <p class="sec-intro reveal reveal-delay-2">Most founders have a great product and no idea where to start online. I take care of the whole picture — from building your store to driving traffic and turning it into real revenue.</p>
     <div class="svc-grid">
-      <div class="svc"><div class="svc-num">01</div><h3 class="svc-title">Website & Shopify Build</h3><p class="svc-desc">A store that actually converts. I design and build clean, fast, mobile-ready Shopify and web experiences that make your product look as good as it is — and make it easy for people to buy.</p></div>
-      <div class="svc"><div class="svc-num">02</div><h3 class="svc-title">Email Marketing</h3><p class="svc-desc">Your email list is your most valuable asset. I build the flows, sequences, and campaigns that keep your customers coming back — welcome series, abandoned cart, post-purchase, and beyond.</p></div>
-      <div class="svc"><div class="svc-num">03</div><h3 class="svc-title">Advertising & Marketing</h3><p class="svc-desc">Paid ads that are worth paying for. I manage Meta and Google campaigns with a clear strategy behind every dollar — so you're not just spending, you're growing.</p></div>
-      <div class="svc"><div class="svc-num">04</div><h3 class="svc-title">Analytics & Growth</h3><p class="svc-desc">What gets measured gets better. I set up the reporting and dashboards that show you what's working, what's not, and exactly where to focus next.</p></div>
+      <div class="svc reveal reveal-delay-1"><div class="svc-num">01</div><h3 class="svc-title">Website & Shopify Build</h3><p class="svc-desc">A store that actually converts. I design and build clean, fast, mobile-ready Shopify and web experiences that make your product look as good as it is — and make it easy for people to buy.</p></div>
+      <div class="svc reveal reveal-delay-2"><div class="svc-num">02</div><h3 class="svc-title">Email Marketing</h3><p class="svc-desc">Your email list is your most valuable asset. I build the flows, sequences, and campaigns that keep your customers coming back — welcome series, abandoned cart, post-purchase, and beyond.</p></div>
+      <div class="svc reveal reveal-delay-3"><div class="svc-num">03</div><h3 class="svc-title">Advertising & Marketing</h3><p class="svc-desc">Paid ads that are worth paying for. I manage Meta and Google campaigns with a clear strategy behind every dollar — so you're not just spending, you're growing.</p></div>
+      <div class="svc reveal reveal-delay-4"><div class="svc-num">04</div><h3 class="svc-title">Analytics & Growth</h3><p class="svc-desc">What gets measured gets better. I set up the reporting and dashboards that show you what's working, what's not, and exactly where to focus next.</p></div>
     </div>
   </div>
 </section>
 
+
+<div class="parallax-break" id="parallax-break">
+  <div class="parallax-break-bg" id="parallax-bg"></div>
+  <div class="parallax-break-lines"></div>
+  <div class="parallax-break-content">
+    <p class="parallax-break-label">The truth about ecommerce</p>
+    <h2 class="parallax-break-quote">Most founders have a great product. <em>Very few have a great presence.</em></h2>
+    <div class="parallax-break-line"></div>
+  </div>
+</div>
+
 <section class="about" id="about">
-  <div class="about-img">
+  <div class="about-img reveal-left">
     <img src="patrick-about.png" alt="Patrick Maq" />
     <div class="about-img-overlay"></div>
   </div>
-  <div class="about-content">
+  <div class="about-content reveal-right">
     <p class="about-eyebrow">About</p>
     <div class="about-divider"></div>
     <h2 class="about-title">The creative side <em>and</em> the technical side.</h2>
@@ -278,13 +480,13 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
 
 <section class="process" id="process">
   <div class="process-inner">
-    <p class="sec-eyebrow">How it works</p>
-    <h2 class="sec-title">Simple process. Real results.</h2>
+    <p class="sec-eyebrow reveal">How it works</p>
+    <h2 class="sec-title reveal reveal-delay-1">Simple process. Real results.</h2>
     <div class="process-grid">
-      <div class="process-card"><span class="process-num">01 — Start</span><h3 class="process-title">We talk</h3><p class="process-desc">No forms, no funnels. Just a real conversation about where you are, where you want to go, and whether we're a good fit.</p></div>
-      <div class="process-card"><span class="process-num">02 — Plan</span><h3 class="process-title">We map it out</h3><p class="process-desc">A clear plan for your store, your marketing, and your growth — prioritised and scoped so nothing gets missed.</p></div>
-      <div class="process-card"><span class="process-num">03 — Build</span><h3 class="process-title">We build it</h3><p class="process-desc">Store, emails, ads, analytics — built properly from the start so you're not patching things together later.</p></div>
-      <div class="process-card"><span class="process-num">04 — Grow</span><h3 class="process-title">We scale it</h3><p class="process-desc">Once the foundation is solid, we focus on what's working and turn it up — more traffic, better conversion, real growth.</p></div>
+      <div class="process-card reveal reveal-delay-1"><span class="process-num">01 — Start</span><h3 class="process-title">We talk</h3><p class="process-desc">No forms, no funnels. Just a real conversation about where you are, where you want to go, and whether we're a good fit.</p></div>
+      <div class="process-card reveal reveal-delay-2"><span class="process-num">02 — Plan</span><h3 class="process-title">We map it out</h3><p class="process-desc">A clear plan for your store, your marketing, and your growth — prioritised and scoped so nothing gets missed.</p></div>
+      <div class="process-card reveal reveal-delay-3"><span class="process-num">03 — Build</span><h3 class="process-title">We build it</h3><p class="process-desc">Store, emails, ads, analytics — built properly from the start so you're not patching things together later.</p></div>
+      <div class="process-card reveal reveal-delay-4"><span class="process-num">04 — Grow</span><h3 class="process-title">We scale it</h3><p class="process-desc">Once the foundation is solid, we focus on what's working and turn it up — more traffic, better conversion, real growth.</p></div>
     </div>
   </div>
 </section>
@@ -292,11 +494,11 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
 <section class="cta" id="contact">
   <div class="cta-inner">
     <div>
-      <p class="cta-eyebrow">Get in touch</p>
-      <h2 class="cta-title">Ready to stop waiting and <em>start building?</em></h2>
-      <p class="cta-sub">No pressure. Just a conversation about where you're headed and how I can help get you there.</p>
+      <p class="cta-eyebrow reveal">Get in touch</p>
+      <h2 class="cta-title reveal reveal-delay-1">Ready to stop waiting and <em>start building?</em></h2>
+      <p class="cta-sub reveal reveal-delay-2">No pressure. Just a conversation about where you're headed and how I can help get you there.</p>
     </div>
-    <a href="mailto:patrickmaqconsulting@gmail.com" class="btn-navy">patrickmaqconsulting@gmail.com</a>
+    <a href="mailto:patrickmaqconsulting@gmail.com" class="btn-navy reveal reveal-delay-3">patrickmaqconsulting@gmail.com</a>
   </div>
 </section>
 
@@ -305,5 +507,67 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
   <span class="f-copy">© 2026. All rights reserved.</span>
 </footer>
 
+
+<script>
+  // Scroll reveal observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .parallax-break').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Counter animation for hero stats
+  function animateCounter(el, target, suffix) {
+    let start = 0;
+    const duration = 1500;
+    const startTime = performance.now();
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(eased * target);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  // Trigger counters when hero stats are visible
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const nums = entry.target.querySelectorAll('.hero-stat-num');
+        nums.forEach(num => {
+          const text = num.textContent;
+          if (text.includes('20')) animateCounter(num, 20, '+');
+          else if (text.includes('8')) animateCounter(num, 8, '+');
+          else if (text.includes('1')) animateCounter(num, 1, '');
+        });
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const heroStats = document.querySelector('.hero-stats');
+  if (heroStats) statsObserver.observe(heroStats);
+
+  // Parallax background movement
+  const parallaxBg = document.getElementById('parallax-bg');
+  const parallaxSection = document.getElementById('parallax-break');
+
+  window.addEventListener('scroll', () => {
+    if (!parallaxBg || !parallaxSection) return;
+    const rect = parallaxSection.getBoundingClientRect();
+    const scrolled = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+    const offset = (scrolled - 0.5) * 80;
+    parallaxBg.style.transform = 'translateY(' + offset + 'px)';
+  }, { passive: true });
+</script>
 </body>
 </html>
