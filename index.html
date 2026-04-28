@@ -335,6 +335,13 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
+
+/* TARGETED FIX: low-contrast eyebrow + heading text on white backgrounds */
+.process .sec-eyebrow,
+.process .sec-title,
+.services .sec-eyebrow {
+  color: #48747c;
+}
 </style>
 </head>
 <body>
@@ -439,7 +446,7 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
   <div class="services-inner">
     <p class="sec-eyebrow reveal">What I do</p>
     <h2 class="sec-title reveal reveal-delay-1">Everything you need to launch and grow.</h2>
-    <p class="sec-intro reveal reveal-delay-2">The truth is, most people don’t start a brand because they love marketing.</p>
+    <p class="sec-intro reveal reveal-delay-2">The truth is, most people don't start a brand because they love marketing.</p>
     <div class="svc-grid">
       <div class="svc reveal reveal-delay-1"><div class="svc-num">01</div><h3 class="svc-title">Website & Shopify Build</h3><p class="svc-desc">A store that actually converts. I design and build clean, fast, mobile-ready Shopify and web experiences that make your product look as good as it is — and make it easy for people to buy.</p></div>
       <div class="svc reveal reveal-delay-2"><div class="svc-num">02</div><h3 class="svc-title">Email Marketing</h3><p class="svc-desc">Your email list is your most valuable asset. I build the flows, sequences, and campaigns that keep your customers coming back — welcome series, abandoned cart, post-purchase, and beyond.</p></div>
