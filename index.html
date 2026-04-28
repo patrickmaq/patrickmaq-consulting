@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Patrick Maq Consulting</title>
-<meta name="description" content="All-in-one ecommerce consulting for founders ready to build, launch, and grow.">
+<meta name="description" content="Brand, ecommerce, and operational consulting for founders ready to build and grow.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --navy:#af431d;--navy-dark:#162D78;--navy-light:#48747c;
   --gold:#f6f3e7;--gold-light:#F0BC3A;
+  --teal:#48747c;--teal-dark:#365f66;
   --white:#FFFFFF;--off-white:#F8F8F8;--black:#000000;
   --grey:#6B7280;--light-grey:#E5E7EB;
   --heading:'DM Serif Display',Georgia,serif;--body:'DM Sans',sans-serif;
@@ -86,9 +87,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);bord
 .svc:hover .svc-num{color:var(--gold)}
 .svc:nth-child(2n){border-right:none}
 .svc:nth-child(3),.svc:nth-child(4){border-bottom:none}
-.svc-num{font-size:2rem;font-weight:700;color:rgba(31,62,154,0.2);line-height:1;margin-bottom:1.25rem;transition:color 0.2s}
+.svc-num{font-size:2rem;font-weight:700;color:rgba(175,67,29,0.15);line-height:1;margin-bottom:1.25rem;transition:color 0.2s}
 .svc-title{font-family:var(--heading);font-size:1.2rem;font-weight:400;color:var(--navy);margin-bottom:0.75rem;letter-spacing:0.02em;transition:color 0.2s}
 .svc-desc{font-size:13px;font-weight:300;color:var(--grey);line-height:1.8;transition:color 0.2s}
+
+/* BEYOND THE STOREFRONT */
+.beyond{padding:5rem 3rem;background:var(--teal)}
+.beyond-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.beyond-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:1rem}
+.beyond-title{font-family:var(--heading);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:1.5rem;letter-spacing:-0.01em}
+.beyond-title em{font-style:normal;color:rgba(255,255,255,0.6)}
+.beyond-body{font-size:14px;font-weight:300;color:rgba(255,255,255,0.75);line-height:1.9;margin-bottom:2rem}
+.beyond-body strong{color:var(--white);font-weight:500}
+.beyond-cta{display:inline-block;padding:0.9rem 2rem;border:1.5px solid rgba(255,255,255,0.5);color:var(--white);font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:all 0.2s}
+.beyond-cta:hover{background:rgba(255,255,255,0.12);border-color:var(--white)}
+.beyond-questions{display:flex;flex-direction:column;gap:1.25rem}
+.beyond-q{padding:1.25rem 1.5rem;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06)}
+.beyond-q-text{font-size:13px;font-weight:400;color:rgba(255,255,255,0.8);line-height:1.6}
+.beyond-q-text strong{color:var(--white);font-weight:600;display:block;margin-bottom:0.2rem;font-size:12px;letter-spacing:0.05em}
 
 /* ABOUT */
 .about{padding:0;display:grid;grid-template-columns:1fr 1fr;min-height:600px}
@@ -111,8 +127,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);bord
 .process-card{padding:2.5rem 2rem;border-right:2px solid var(--light-grey);position:relative}
 .process-card:last-child{border-right:none}
 .process-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:transparent;transition:background 0.2s}
-.process-card:hover::before{background:var(--gold)}
-.process-num{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.process-card:hover::before{background:var(--navy)}
+.process-num{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:block}
 .process-title{font-family:var(--heading);font-size:1.1rem;font-weight:400;color:var(--navy);margin-bottom:0.6rem;letter-spacing:0.01em}
 .process-desc{font-size:12px;font-weight:300;color:var(--grey);line-height:1.8}
 
@@ -142,13 +158,11 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
   .svc-grid{grid-template-columns:1fr}
   .svc{border-right:none!important;border-bottom:2px solid var(--navy)!important}
   .svc:last-child{border-bottom:none!important}
+  .beyond-inner{grid-template-columns:1fr;gap:2.5rem}
   .process-grid{grid-template-columns:1fr 1fr}
   .cta-inner{grid-template-columns:1fr}
   footer{flex-direction:column;gap:1rem;text-align:center}
 }
-
-/* SCROLL REVEAL ANIMATIONS */
-/* ENHANCED ANIMATIONS & EFFECTS */
 
 /* Hero geometric background */
 .hero-left::after {
@@ -232,7 +246,7 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
   height: 1px;
   background: var(--gold);
   transform: rotate(-5deg);
-  box-shadow: 0 60px 0 rgba(224,167,33,0.5), 0 120px 0 rgba(224,167,33,0.3), 0 -60px 0 rgba(224,167,33,0.5), 0 -120px 0 rgba(224,167,33,0.3);
+  box-shadow: 0 60px 0 rgba(246,243,231,0.5), 0 120px 0 rgba(246,243,231,0.3), 0 -60px 0 rgba(246,243,231,0.5), 0 -120px 0 rgba(246,243,231,0.3);
 }
 .parallax-break-content {
   position: relative;
@@ -282,61 +296,42 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
   width: 60px;
 }
 
-/* COUNTER ANIMATION */
-.hero-stat-num {
-  transition: none;
-}
+.hero-stat-num { transition: none; }
 
-/* SERVICE CARD GOLD BORDER REVEAL */
 .svc {
   border-left: 3px solid transparent !important;
   transition: background 0.3s, border-left-color 0.5s ease !important;
 }
-.svc.visible {
-  border-left-color: var(--gold) !important;
-}
-.svc:hover {
-  border-left-color: var(--gold) !important;
-}
+.svc.visible { border-left-color: var(--navy) !important; }
+.svc:hover { border-left-color: var(--navy) !important; }
 
-/* ENHANCED REVEAL */
 .reveal, .reveal-left, .reveal-right {
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
-
 .reveal {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-left {
   opacity: 0;
   transform: translateX(-40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
-.reveal-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
 .reveal-right {
   opacity: 0;
   transform: translateX(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
-.reveal-right.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* TARGETED FIX: low-contrast eyebrow + heading text on white backgrounds */
+/* TARGETED FIX: low-contrast text on white backgrounds */
 .process .sec-eyebrow,
 .process .sec-title,
 .services .sec-eyebrow {
@@ -358,9 +353,14 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
 
 <section class="hero">
   <div class="hero-left">
-    <div class="geo-ring-2"></div><div class="geo-dot geo-dot-1"></div><div class="geo-dot geo-dot-2"></div><div class="geo-dot geo-dot-3"></div><div class="geo-dot geo-dot-4"></div><p class="hero-eyebrow reveal">Ecommerce Consulting</p>
-    <h1 class="hero-hl reveal reveal-delay-1">Your Partner in Launching & Scaling a <em>Successful Online Store.</em></h1>
-    <p class="hero-sub reveal reveal-delay-2">An all-in-one ecommerce solution for founders who are ready to stop figuring it out alone — and start building something that actually moves.</p>
+    <div class="geo-ring-2"></div>
+    <div class="geo-dot geo-dot-1"></div>
+    <div class="geo-dot geo-dot-2"></div>
+    <div class="geo-dot geo-dot-3"></div>
+    <div class="geo-dot geo-dot-4"></div>
+    <p class="hero-eyebrow reveal">Consulting · Strategy · Build</p>
+    <h1 class="hero-hl reveal reveal-delay-1">Your Partner in Building & Growing <em>Something Worth Having.</em></h1>
+    <p class="hero-sub reveal reveal-delay-2">From launching your store to streamlining how your team operates — an all-in-one solution for founders ready to stop figuring it out alone.</p>
     <div class="hero-actions reveal reveal-delay-3">
       <a href="#contact" class="btn-gold">Start a conversation</a>
       <a href="#services" class="btn-outline">See what I do</a>
@@ -383,7 +383,7 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
   <div class="hero-right">
     <img class="hero-img" src="patrick-hero.png" alt="Patrick Maq" />
     <div class="hero-tag">
-      <span class="hero-tag-text">Ecommerce Specialist · Vancouver, BC</span>
+      <span class="hero-tag-text">Strategy & Build · Vancouver, BC</span>
       <span class="hero-tag-line"></span>
     </div>
   </div>
@@ -396,12 +396,16 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
     <span class="ticker-item">Paid Advertising</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Analytics & Growth</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Brand Strategy</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Internal Tools</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Workflow Automation</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Ecommerce Launch</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Shopify & Web Build</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Email Marketing</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Paid Advertising</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Analytics & Growth</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Brand Strategy</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Internal Tools</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Workflow Automation</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Ecommerce Launch</span><span class="ticker-sep">·</span>
   </div>
 </div>
@@ -456,6 +460,29 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
   </div>
 </section>
 
+<!-- BEYOND THE STOREFRONT -->
+<section class="beyond reveal" id="beyond">
+  <div class="beyond-inner">
+    <div>
+      <p class="beyond-eyebrow">Also worth knowing</p>
+      <h2 class="beyond-title">Beyond the storefront.</h2>
+      <p class="beyond-body">Some of the best wins for a growing business happen behind the scenes. I build lightweight internal tools for small teams — custom schedulers, workflow automations, internal dashboards.<br><br>The kind of thing that quietly <strong>saves time and money</strong> without a big agency price tag.</p>
+      <a href="mailto:patrickmaqconsulting@gmail.com" class="beyond-cta">Let's talk about it →</a>
+    </div>
+    <div class="beyond-questions">
+      <div class="beyond-q">
+        <p class="beyond-q-text"><strong>Sound familiar?</strong> Are there tasks your team does manually every week that eat up hours — but nobody's ever stopped to fix?</p>
+      </div>
+      <div class="beyond-q">
+        <p class="beyond-q-text"><strong>Worth asking:</strong> Are you paying for software subscriptions doing something simple that could be built once and owned forever?</p>
+      </div>
+      <div class="beyond-q">
+        <p class="beyond-q-text"><strong>The tell:</strong> Is there a process that works, but just barely — and everyone on the team knows it?</p>
+      </div>
+      <p style="font-size:12px;font-weight:500;color:rgba(255,255,255,0.45);margin-top:0.5rem;letter-spacing:0.04em;">If something came to mind reading that — it's worth a conversation.</p>
+    </div>
+  </div>
+</section>
 
 <div class="parallax-break" id="parallax-break">
   <div class="parallax-break-bg" id="parallax-bg"></div>
@@ -479,7 +506,7 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
     <p class="about-body">
       Most people don't start a brand because they love marketing. They start it because they believe in something — a product, an idea, a vision worth building.<br><br>
       <strong>I understand both sides of the equation.</strong> The creative work that makes a brand feel right, and the technical systems that make it actually run. I help you make sense of the moving parts — your store, your emails, your ads, your data — so everything works together.<br><br>
-      I care about brands that want to create with intention. If that's you, I think we'll work well together.
+      I care about businesses that want to build with intention. If that's you, I think we'll work well together.
     </p>
     <p class="about-quote">"Strategy is the difference between a brand people find — and one they seek out."</p>
   </div>
@@ -514,9 +541,7 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
   <span class="f-copy">© 2026. All rights reserved.</span>
 </footer>
 
-
 <script>
-  // Scroll reveal observer
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -529,9 +554,7 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
     observer.observe(el);
   });
 
-  // Counter animation for hero stats
   function animateCounter(el, target, suffix) {
-    let start = 0;
     const duration = 1500;
     const startTime = performance.now();
     function update(currentTime) {
@@ -545,7 +568,6 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
     requestAnimationFrame(update);
   }
 
-  // Trigger counters when hero stats are visible
   const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -564,7 +586,6 @@ footer{background:var(--navy-dark);padding:2rem 3rem;display:flex;justify-conten
   const heroStats = document.querySelector('.hero-stats');
   if (heroStats) statsObserver.observe(heroStats);
 
-  // Parallax background movement
   const parallaxBg = document.getElementById('parallax-bg');
   const parallaxSection = document.getElementById('parallax-break');
 
